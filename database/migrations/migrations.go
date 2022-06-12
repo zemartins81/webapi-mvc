@@ -6,8 +6,6 @@ import (
 )
 
 func RunMigrations(db *gorm.DB) {
-	err := db.AutoMigrate(models.Book{})
-	if err != nil {
-		return
-	}
+	db.AutoMigrate(models.Book{})
+	db.AutoMigrate(models.User{})
 }
